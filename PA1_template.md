@@ -76,13 +76,15 @@ sum(is.na(activity$steps))
 ## [1] 2304
 ```
 ###2. Strategy for filling in all of the missing values in the dataset
-###Let's use average number of steps for period to fill missing values
+###Let's use average number of steps for period to fill missing values.
+###See the code below...
 
 ###3. New dataset that is equal to the original dataset but with the missing data filled in
 
 ```r
 adjActivity <- activity
-for(i in 1:dim(activity)[1]){if (is.na(activity[i,]$steps)) {adjActivity[i,]$steps <-averSteps$steps[which(averSteps$interval == activity[i,]$interval)] } }
+for(i in 1:dim(activity)[1])
+{if (is.na(activity[i,]$steps)) {adjActivity[i,]$steps <-averSteps$steps[which(averSteps$interval == activity[i,]$interval)] } }
 ```
 
 ###4. Histogram of the total number of steps taken each day

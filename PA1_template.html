@@ -118,13 +118,17 @@ plot(averSteps$interval, averSteps$steps, type = &quot;l&quot;, main = &quot;Ave
 <div id="strategy-for-filling-in-all-of-the-missing-values-in-the-dataset" class="section level3">
 <h3>2. Strategy for filling in all of the missing values in the dataset</h3>
 </div>
-<div id="lets-use-average-number-of-steps-for-period-to-fill-missing-values" class="section level3">
-<h3>Let’s use average number of steps for period to fill missing values</h3>
+<div id="lets-use-average-number-of-steps-for-period-to-fill-missing-values." class="section level3">
+<h3>Let’s use average number of steps for period to fill missing values.</h3>
+</div>
+<div id="see-the-code-below" class="section level3">
+<h3>See the code below…</h3>
 </div>
 <div id="new-dataset-that-is-equal-to-the-original-dataset-but-with-the-missing-data-filled-in" class="section level3">
 <h3>3. New dataset that is equal to the original dataset but with the missing data filled in</h3>
 <pre class="r"><code>adjActivity &lt;- activity
-for(i in 1:dim(activity)[1]){if (is.na(activity[i,]$steps)) {adjActivity[i,]$steps &lt;-averSteps$steps[which(averSteps$interval == activity[i,]$interval)] } }</code></pre>
+for(i in 1:dim(activity)[1])
+{if (is.na(activity[i,]$steps)) {adjActivity[i,]$steps &lt;-averSteps$steps[which(averSteps$interval == activity[i,]$interval)] } }</code></pre>
 </div>
 <div id="histogram-of-the-total-number-of-steps-taken-each-day-1" class="section level3">
 <h3>4. Histogram of the total number of steps taken each day</h3>
